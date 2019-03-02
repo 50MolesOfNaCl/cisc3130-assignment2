@@ -27,7 +27,10 @@ public class Palindrome {
       // One by one push all characters of string to stack.
       stack.push(input[i]);
     }
-
+    
+    //FOR COMPARISON
+    String original = array_to_String(input);
+    
     // Save the reversed input string
     String reversed = "";
     while(!stack.empty()){
@@ -37,6 +40,27 @@ public class Palindrome {
 
     // Display reversed as string array
     System.out.println("Output:\t" + Arrays.toString(reversed.split("")));
+    System.out.println(is_palindrome(reversed, original));
   } // end main
 
+  //ADDED CODE
+  //Wait...is that all?
+  public static boolean is_palindrome(String s1, String s2)
+  {
+	return s1.equals(s2);
+  }
+  public static String array_to_String(String array[])
+  {
+	  String s = "";
+	  for(int i = 0; i < array.length; i++)
+		  s += array[i];
+	  return s;
+  }
+  public static String array_to_String(int array[])
+  {
+	  String s = "";
+	  for(int i = 0; i < array.length; i++)
+		  s += array[i];
+	  return s;
+  }
 }// end class Palindrome
